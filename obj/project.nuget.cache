@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EgzXgJkBeqn97hj+y6zT1I58NDXKkztpH6osbqCi4TpYsNZdpud3+Zr56+CySi9exZjZ6/hVrzj5pvg24QK/RQ==",
+  "dgSpecHash": "gdDqPgIZT7vxllztSHxnzJ6dnWAnXKfaE4GF1oe62G1Q3ksqRtIsCwcjQDMLyvIrJl8TShKEgB/jFiUhsoxhEQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\DELL\\Documents\\projetbancaire\\AuthMvc\\AuthMvc.csproj",
+  "projectFilePath": "C:\\Users\\DELL\\Documents\\AuthMvc\\AuthMvc.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
