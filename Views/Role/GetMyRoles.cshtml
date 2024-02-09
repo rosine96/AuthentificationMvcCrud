@@ -1,0 +1,29 @@
+﻿@model IEnumerable<string>
+
+@{
+    ViewData["Title"] = "GetMyRoles";
+}
+
+<h1>Mes roles</h1>
+
+
+<table class="table table-hover">
+    <thead class="table-primary">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-light">
+                <td>
+                    @Html.DisplayFor(modelItem => item)
+                </td>
+                
+            </tr>
+        }
+    </tbody>
+</table>

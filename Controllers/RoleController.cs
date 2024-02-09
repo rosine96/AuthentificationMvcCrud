@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Security.Claims;
 
 namespace AuthMvc.Controllers
 {
@@ -11,10 +12,12 @@ namespace AuthMvc.Controllers
     {
         
         private RoleManager<IdentityRole> _roleManager;
+        private UserManager<IdentityUser> _userManager;
 
-        public RoleController(RoleManager<IdentityRole> roleManager)
+        public RoleController(RoleManager<IdentityRole> roleManager,UserManager<IdentityUser> userManager)
         {
-            _roleManager = roleManager;  
+            _roleManager = roleManager; 
+            _userManager = userManager;
         }
         [Authorize(Roles = "Administrateur" )]
         public IActionResult Index()
@@ -33,12 +36,15 @@ namespace AuthMvc.Controllers
         public async Task<IActionResult> CreateRole(IdentityRole role)
         {
            
-            
-                
-                await _roleManager.CreateAsync(role);
-                
-            
-            return View();
+             await _roleManager.CreateAsync(role);
+             return View();
+        }
+        public async Task<IActionResult> GetMyRoles()
+        {
+         var userEmail =User.FindFirstValue(ClaimTypes.Email);
+         var user = await _userManager.FindByEmailAsync(userEmail);
+            var roles = await _userManager.GetRolesAsync(user);
+            return View(roles);
         }
     }
 }
